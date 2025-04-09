@@ -65,8 +65,8 @@ class Calculator {
         return lhs / rhs
     }
     
-    func mathOp(lhs: Int, rhs: Int, op: String) -> Int {
-        return -1
+    func mathOp(lhs: Int, rhs: Int, op: (Int, Int) -> Int) -> Int {
+        return op(lhs, rhs)
     }
     
     func avg(_ arr: [Int]) -> Int {
