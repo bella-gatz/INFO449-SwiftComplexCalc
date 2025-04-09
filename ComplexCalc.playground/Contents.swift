@@ -69,6 +69,25 @@ class Calculator {
         return op(lhs, rhs)
     }
     
+    func mathOp(args: [Int], beg: Int, op: (Int, Int) -> Int) -> Int {
+        var total = 0
+        var index = 0
+        while index < args.count {
+            if (index == 0) {
+                total = op(beg, args[index]) // these operators are wrong!!
+//                print(index, beg, args[index], total)
+
+            } else {
+                total = op(total, args[index])
+            }
+            index += 1
+        }
+        
+//        print(total, /n/)
+        return total
+    }
+    
+
     func avg(_ arr: [Int]) -> Int {
         
         return add(arr) / arr.count
