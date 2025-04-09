@@ -43,8 +43,33 @@ class Calculator {
         return total
     }
     
+    func add(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
+        let x = lhs.0 + rhs.0
+        let y = lhs.1 + rhs.1
+        return (x, y)
+    }
+    
+    func add(lhs: Dictionary<String, Int>, rhs: Dictionary<String, Int>) -> Dictionary<String, Int> {
+        let x = lhs["x"]! + rhs["x"]!
+        let y = lhs["y"]! + rhs["y"]!
+        return ["x": x, "y": y]
+    }
+    
     func subtract(lhs: Int, rhs: Int) -> Int {
         return lhs - rhs
+    }
+    
+    func subtract(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
+        let x = lhs.0 - rhs.0
+        let y = lhs.1 - rhs.1
+        return (x, y)
+    }
+    
+    func subtract(lhs: Dictionary<String, Int>, rhs: Dictionary<String, Int>) -> Dictionary<String, Int> {
+        let x = lhs["x"]! - rhs["x"]!
+        let y = lhs["y"]! - rhs["y"]!
+        
+        return ["x": x, "y": y]
     }
     
     func multiply(lhs: Int, rhs: Int) -> Int {
